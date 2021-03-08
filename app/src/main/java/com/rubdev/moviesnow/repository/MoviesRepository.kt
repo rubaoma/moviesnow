@@ -2,17 +2,19 @@ package com.rubdev.moviesnow.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.rubdev.moviesnow.Constants.Companion.PAGE
+import com.rubdev.moviesnow.Constants.Companion.PT_BR
 import com.rubdev.moviesnow.data.ImdbApi
 import com.rubdev.moviesnow.di.DaggerAppComponent
+import com.rubdev.moviesnow.internal.KEY_IMDB
 import com.rubdev.moviesnow.model.MovieResponse
-import dagger.android.DaggerApplication
-import dagger.android.support.DaggerAppCompatActivity
+import io.reactivex.disposables.Disposable
 import javax.inject.Inject
 
 class MoviesRepository {
 
     @Inject
-    lateinit var IMDBApiService: ImdbApi
+    lateinit var iMDBApiService: ImdbApi
 
     private val _movies by lazy { MutableLiveData<List<MovieResponse>>() }
     val movie: LiveData<List<MovieResponse>>
@@ -31,5 +33,10 @@ class MoviesRepository {
         DaggerAppComponent.create().inject(this)
     }
 
+    private fun insertMovie(): Disposable {
+        return iMDBApiService.getMoviesNowPlaying(KEY_IMDB, PT_BR, PAGE)
+            .sub
+
+    }
 
 }

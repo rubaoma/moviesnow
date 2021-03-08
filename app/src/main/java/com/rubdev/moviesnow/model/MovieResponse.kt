@@ -2,6 +2,7 @@ package com.rubdev.moviesnow.model
 
 import com.squareup.moshi.Json
 
+
 data class MovieResponse(
    @field:Json(name = "dates") val dates: Dates,
    @field:Json(name = "page") val page: Int,
