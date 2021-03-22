@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.rubdev.moviesnow.Constants.Companion.DATABASE_NAME
 
-@Database(entities = [MovieEntity::class], version = 1)
+@Database(entities = [ResultEntity::class], version = 1)
 abstract class MoviesDatabase : RoomDatabase() {
 
     abstract fun movieDao(): MovieDao
