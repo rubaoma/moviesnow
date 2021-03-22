@@ -10,6 +10,11 @@ android {
     // use new Kotlin JVM
     kotlinOptions.useIR = true
 
+    viewBinding {
+        enabled = true
+    }
+
+
     defaultConfig {
         applicationId "com.rubdev.moviesnow"
         minSdkVersion 21
@@ -43,6 +48,7 @@ android {
     buildFeatures {
         dataBinding = true
     }
+
 
 
 }

@@ -8,8 +8,8 @@ import com.rubdev.moviesnow.R
 import com.rubdev.moviesnow.databinding.ItemMovieBinding
 import com.rubdev.moviesnow.model.Result
 
-class TrendingAdapter(
-    private val movieReponse: ArrayList<Result>
+class MovieAdapter(
+    private val movie: ArrayList<Result>
 ): RecyclerView.Adapter<MovieViewHolder>() {
 
 
@@ -24,14 +24,14 @@ class TrendingAdapter(
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        holder.itemMovieBinding.result = movieReponse[position]
+        holder.itemMovieBinding.result = movie[position]
     }
 
-    override fun getItemCount(): Int = movieReponse.size
+    override fun getItemCount(): Int = movie.size
 
     fun setUpData(movies: List<Result>){
-        movieReponse.clear()
-        movieReponse.addAll(movies)
+        movie.clear()
+        movie.addAll(movies)
         notifyDataSetChanged()
     }
 
