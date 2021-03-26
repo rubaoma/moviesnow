@@ -1,6 +1,7 @@
 package com.rubdev.moviesnow.data.database
 
 import com.rubdev.moviesnow.model.Dates
+import com.rubdev.moviesnow.model.GenreIds
 import com.rubdev.moviesnow.model.MovieResponse
 import com.rubdev.moviesnow.model.Result
 
@@ -43,6 +44,21 @@ fun Result.toResultEntity() = ResultEntity(
 )
 
 fun List<Result>.toResultEntityList() = this.map { it.toResultEntity() }
+
+//
+fun GenreIdsEntity.toGenreIds() = GenreIds(
+    this.num
+)
+
+fun List<GenreIdsEntity>.toGenreIdsList() = this.map { it.toGenreIds() }
+
+fun GenreIds.toGenreIdsEntity() = GenreIdsEntity(
+    num = this.num
+
+)
+
+fun List<GenreIds>.toGenreIdsEntityList() = this.map { it.toGenreIdsEntity() }
+
 
 //fun MovieEntity.toMovieResponse() = MovieResponse(
 //    dates = Dates(this.dates.maximum, this.dates.minimum),

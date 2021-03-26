@@ -15,7 +15,7 @@ class MovieViewModel: ViewModel() {
 
     init {
         DaggerAppComponent.create().inject(this)
-        compositeDisposable.add(repository.fethDataFromDatabase())
+        compositeDisposable.add(repository.fetchDataFromDatabase())
     }
 
     /**

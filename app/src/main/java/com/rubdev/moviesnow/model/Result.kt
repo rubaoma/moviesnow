@@ -6,7 +6,7 @@ import com.squareup.moshi.Json
 data class Result(
     @field:Json(name = "adult") val adult: Boolean,
     @field:Json(name = "backdrop_path") val backdrop_path: String,
-    @field:Json(name = "genre_ids") val genre_ids: List<Int>,
+    @field:Json(name = "genre_ids") val genre_ids: List<GenreIds>,
     @field:Json(name = "id") val id: Int,
     @field:Json(name = "original_language") val original_language: String,
     @field:Json(name = "original_title") val original_title: String,

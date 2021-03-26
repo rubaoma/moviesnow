@@ -11,6 +11,7 @@ import com.rubdev.moviesnow.data.database.toResultEntityList
 import com.rubdev.moviesnow.data.database.toResultList
 import com.rubdev.moviesnow.di.DaggerAppComponent
 import com.rubdev.moviesnow.internal.KEY_IMDB
+import com.rubdev.moviesnow.model.GenreIds
 import com.rubdev.moviesnow.model.MovieResponse
 import com.rubdev.moviesnow.model.Result
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -27,6 +28,10 @@ class MoviesRepository {
     private val _movies by lazy { MutableLiveData<List<Result>>() }
     val movies: LiveData<List<Result>>
         get() = _movies
+
+    private val _GenreId by lazy { MutableLiveData<List<GenreIds>>() }
+    val genreIds:LiveData<List<GenreIds>>
+    get() = _GenreId
 
     private val _isInProgress by lazy { MutableLiveData<Boolean>() }
     val isInProgress: LiveData<Boolean>
@@ -96,6 +101,6 @@ class MoviesRepository {
                 }
             )
     }
-    fun fethDataFromDatabase(): Disposable = getMovieQuery()
+    fun fetchDataFromDatabase(): Disposable = getMovieQuery()
 
 }

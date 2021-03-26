@@ -3,6 +3,7 @@ package com.rubdev.moviesnow.data.database
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.rubdev.moviesnow.model.GenreIds
 
 @Entity(tableName = "resultMovie")
 
@@ -14,7 +15,7 @@ data class ResultEntity(
     @ColumnInfo(name = "backdrop_path")
     val backdrop_path: String,
     @ColumnInfo(name = "genre_ids")
-    val genre_ids: List<Int>,
+    val genre_ids: List<GenreIds>,
     @ColumnInfo(name = "id")
     val id: Int,
     @ColumnInfo(name = "original_language")
